@@ -1,0 +1,100 @@
+{
+  "identity": {
+    "name": "E1",
+    "role": "Anti-AI Creative Designer",
+    "aesthetic": "Cyber-Swiss",
+    "principles": [
+      "Fusion over Imitation: Mix Swiss typography with Cyberpunk terminal aesthetics.",
+      "Data Density: Information density should be high but legible. No wasted whitespace.",
+      "Function is Beauty: The raw data (hashes, block numbers) is the art.",
+      "Dark Mode Only: This is a tool for dark rooms and multiple monitors."
+    ]
+  },
+  "typography": {
+    "primary_font": "Inter",
+    "secondary_font": "JetBrains Mono",
+    "instructions": "Import 'JetBrains Mono' from Google Fonts. Use it for ALL headings, data values, hashes, and code blocks. Use 'Inter' only for UI labels and long-form text.",
+    "scale": {
+      "h1": "text-4xl font-bold tracking-tight font-mono",
+      "h2": "text-2xl font-semibold tracking-tight font-mono",
+      "h3": "text-xl font-medium font-mono",
+      "body": "text-sm text-muted-foreground font-sans",
+      "mono_data": "font-mono text-xs tracking-wide"
+    }
+  },
+  "colors": {
+    "palette": {
+      "background": "#050505",
+      "surface": "#0A0A0A",
+      "surface_highlight": "#171717",
+      "border": "#262626",
+      "primary": "#00E599",
+      "primary_glow": "0 0 10px rgba(0, 229, 153, 0.3)",
+      "secondary": "#3B82F6",
+      "destructive": "#FF3333",
+      "text_primary": "#FAFAFA",
+      "text_secondary": "#A1A1AA",
+      "text_tertiary": "#52525B"
+    },
+    "usage_rules": [
+      "NEVER use gradients for backgrounds. Use solid, deep blacks.",
+      "Use the 'primary' color (Neon Mint) for 'Healthy', 'Syncing', 'Active' states.",
+      "Use the 'destructive' color (Neon Red) for 'Offline', 'Error', 'Desync'.",
+      "Borders should be subtle (zinc-800) but present. 1px borders define structure."
+    ]
+  },
+  "layout": {
+    "grid_system": "Bento Grid Mode B (High Density)",
+    "spacing": "Compact. Use p-4 for cards, gap-4 for grids. This is a dashboard, not a marketing page.",
+    "container_style": "border border-border bg-card/50 backdrop-blur-sm",
+    "sidebar": "Fixed left, w-64, border-r border-border bg-background/95 backdrop-blur-md"
+  },
+  "components": {
+    "cards": {
+      "style": "rounded-sm border border-border bg-card/40 hover:bg-card/60 transition-colors",
+      "header": "flex flex-row items-center justify-between space-y-0 pb-2"
+    },
+    "buttons": {
+      "primary": "bg-primary text-primary-foreground hover:bg-primary/90 rounded-sm font-mono text-xs uppercase tracking-wider",
+      "outline": "border border-input bg-background hover:bg-accent hover:text-accent-foreground rounded-sm font-mono text-xs uppercase tracking-wider",
+      "ghost": "hover:bg-accent hover:text-accent-foreground rounded-sm font-mono text-xs"
+    },
+    "status_indicators": {
+      "live": "h-2 w-2 rounded-full bg-primary shadow-[0_0_8px_rgba(0,229,153,0.6)] animate-pulse",
+      "offline": "h-2 w-2 rounded-full bg-destructive shadow-[0_0_8px_rgba(255,51,51,0.6)]"
+    },
+    "charts": {
+      "library": "recharts",
+      "style": "Minimalist. Hide grid lines if possible. Use gradients for area fills (opacity 0.2 to 0). Tooltips must be dark with neon borders."
+    }
+  },
+  "visual_enhancers": {
+    "scanlines": "Add a subtle scanline overlay to 'Terminal' or 'Log' sections using CSS repeating-linear-gradient.",
+    "glassmorphism": "Use backdrop-blur-md for the sidebar and sticky headers. Keep opacity high (90%+) to avoid muddiness.",
+    "borders": "Use 'border-r' or 'border-b' to separate grid items instead of gaps sometimes, creating a 'spreadsheet' or 'technical' look."
+  },
+  "assets": {
+    "icons": "Lucide React (already installed). Use stroke-width={1.5} for a technical feel.",
+    "images": [
+      {
+        "category": "login_background",
+        "url": "https://images.unsplash.com/photo-1755282464684-6568f7f76b5d?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NDQ2NDF8MHwxfHNlYXJjaHw0fHxhYnN0cmFjdCUyMGJsb2NrY2hhaW4lMjBuZXR3b3JrJTIwZGFyayUyMGJhY2tncm91bmR8ZW58MHx8fHwxNzY5MTA1NzkzfDA&ixlib=rb-4.1.0&q=85",
+        "description": "Abstract geometric shapes with blue lighting for login page background"
+      }
+    ]
+  },
+  "universal_guidelines": [
+    "Dark Mode is the DEFAULT and ONLY mode. Do not implement a light mode toggle.",
+    "All data values (numbers, hashes, IPs) MUST be in 'JetBrains Mono'.",
+    "Use 'sonner' for notifications (e.g., 'Transaction Signed', 'Node Synced').",
+    "Interactive elements must have a 'data-testid' attribute.",
+    "Do not use rounded-xl or rounded-2xl. Maximum border radius is 'rounded-md' or 'rounded-sm'. Sharpness = Precision."
+  ],
+  "instructions_to_main_agent": [
+    "1. Add this import to index.css: @import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&display=swap');",
+    "2. Update tailwind.config.js to include 'JetBrains Mono' as the mono font family.",
+    "3. Set the global background color to #050505 in index.css.",
+    "4. Create a 'Layout' component that includes the Sidebar and Topbar.",
+    "5. Use the 'Bento Grid' pattern for the Dashboard Overview page."
+  ]
+}
